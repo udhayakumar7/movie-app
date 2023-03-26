@@ -1,13 +1,74 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.banner .slick-slide{
+ padding: 10px 10px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+  background: linear-gradient(to bottom, #141b29, #0c111b 700px)
 }
+
+
+.bg_gradient{
+  background: linear-gradient(to right, #000000, rgba(0,0,0,0));
+}
+
+.bg-nav{
+  background: linear-gradient(to bottom, #10192b, #02060d 300px);
+}
+
+
+@media screen and (min-width: 1280px) {
+  .banner .slick-slide{
+    padding: 10px 30px;
+  }
+  .header{
+    padding: 10px 30px;
+  }
+}
+
+.content{
+ opacity: 0;
+ /* background: red; */
+ width: 100%;
+ transition: 0.30s all ease-in-out;
+
+}
+.card_img{
+  transition: 0.30s all ease-in-out;
+}
+.card_img:hover .content{
+
+  background: linear-gradient(to top, #000000, rgba(0,0,0,0));
+  width: 100%;
+  opacity: 1;
+  
+}
+
+.card_img:hover{
+
+  transform: scale(1.1);
+}
+
+.login_bg{
+background: linear-gradient(to top, #000000, rgba(0,0,0,0)), url('./assets/banner.jpg') ;
+height: 100vh;
+width: 100%;
+background-repeat: repeat-y;
+animation: scroll 2s infinite alternate ;
+
+}
+.bg_new{
+  background-color: rgba(0, 0, 0, 0.347);
+}
+.input-form{
+  backdrop-filter: blur(5px);
+   
+    background-color: rgb(0 0 0 / 15%) !important;
+}
+/* --BG_GRADIENT_L0: linear-gradient(to bottom, #141b29, #0c111b 300px); */
+
