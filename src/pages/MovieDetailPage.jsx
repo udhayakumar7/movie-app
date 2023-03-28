@@ -68,10 +68,10 @@ const [details, setDetails]= useState([])
       if(videos.find(x => x.type === "Trailer")){
 
         const resulted = videos.filter(y=> y.type === 'Trailer')
-        console.log(resulted[1], 'rgfhfhgfghfh')
-         console.log(resulted[1].key, 'lllll')
+        // console.log(resulted[1] || '404page', 'rgfhfhgfghfh')
+        //  console.log(resulted[1].key || '404page', 'lllll')
 
-         const keywes = resulted[1].key
+         const keywes = resulted[1]?.key || "OKBMCL-frPU"
      
          setNewvideo(keywes)
        
@@ -111,7 +111,7 @@ const [details, setDetails]= useState([])
 
      <div>
 
-     <div className=' md:h-80  lg:h-80 xl:h-h-banner h-52'>
+     <div className=' md:h-80  lg:h-80 xl:h-h-movie h-52'>
 
 <ReactPlayer height='100%' playing controls={true} width="100%"
        light={`https://image.tmdb.org/t/p/original${thumb}`} url={`https://www.youtube.com/embed/${newvideo}`} />
@@ -127,9 +127,9 @@ const [details, setDetails]= useState([])
 <div className='  mx-8 my-6 py-5 px-4'>
 
 
-  <h3 className='text-white text-3xl font-inter font-semibold '>{name}</h3>
+  <h3 className='text-white text-lg lg:text-3xl font-inter font-semibold '>{name}</h3>
 
-  <h3 className='text-gray-600 py-3 text-lg font-inter  font-normal '>{overview}</h3>
+  <h3 className='text-gray-600 py-3 text-sm lg:text-lg font-inter  font-normal '>{overview}</h3>
 
 
 

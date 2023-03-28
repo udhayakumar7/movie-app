@@ -17,7 +17,8 @@ module.exports = {
       },
       height :{
 
-        'h-banner': '550px'
+        'h-banner': '550px',
+        'h-movie' : '639px'
       }
     },
   },

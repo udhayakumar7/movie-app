@@ -72,3 +72,14 @@ animation: scroll 2s infinite alternate ;
 }
 /* --BG_GRADIENT_L0: linear-gradient(to bottom, #141b29, #0c111b 300px); */
 
+/* video
+
+{
+  width: 100% !important;
+  left: 0 !important;
+}
+
+.html5-video-player .video-stream {
+  width: 100%;
+  left: 0;
+} */
