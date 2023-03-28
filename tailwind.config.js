@@ -17,7 +17,7 @@ module.exports = {
       },
       height :{
 
-        'h-banner': '450px'
+        'h-banner': '550px'
       }
     },
   },

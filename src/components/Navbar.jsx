@@ -52,9 +52,9 @@ const logout = () =>{
                 <div className='flex items-center'>
                 <img className=' w-full ml-3' src="https://secure-media.hotstarext.com/web-assets/prod/images/brand-logos/disney-hotstar-logo-dark.svg" alt="" />
                 <div className='lg:flex hidden flex-row'>
-                <h2 className=' mt-2 px-6 text-white font-inter'>TV</h2>
-                 <h2 className=' mt-2 px-6 text-white font-inter'>Movie</h2>
-                 <h2 className=' mt-2 px-6 text-white Inter font-inter'>Sports</h2>
+                <h2 className=' mt-2 px-6 text-white font-semibold font-inter'>TV</h2>
+                 <h2 className=' mt-2 px-6 text-white font-semibold font-inter'>Movie</h2>
+                 <h2 className=' mt-2 px-6 text-white font-semibold Inter font-inter'>Sports</h2>
                 </div>
                
 
