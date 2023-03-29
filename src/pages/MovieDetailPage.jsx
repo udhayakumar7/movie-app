@@ -1,8 +1,11 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import ReactPlayer from 'react-player/lazy'
+import request from '../helpers/request'
+
+
 
 
 const MovieDetailPage = () => {
@@ -46,7 +49,7 @@ const [details, setDetails]= useState([])
       setThumb(res.data.backdrop_path)
       setName(res.data.original_title ,'kk')
       setOverview(res.data.overview)
-      setDetails(res)
+      // setDetails(res)
      }))
 
     }
@@ -91,7 +94,27 @@ const [details, setDetails]= useState([])
   
   
 
+  useEffect(() => {
 
+    const getDetailss = async () =>{
+
+     const movieData1 = await axios(`https://api.themoviedb.org/3/discover/movie?api_key=8f1f147ace26bcf87ce6f133e897214d&language=ta&year=2022`).then((res =>{
+      console.log(res.data.results, "morelike" )
+      setDetails(res.data.results)
+     }))
+
+    }
+
+
+    
+    getDetailss()
+
+    return () => {
+      
+    }
+
+  
+  }, [])
   
 
 
@@ -134,16 +157,51 @@ const [details, setDetails]= useState([])
 
 
 </div>
+<div className='mx-8 my-6 py-5 px-4'>
 
-{/* {
-  details.map((detail, i)=>{
+  <h3 className='text-white text-lg lg:text-2xl border-b-gray-600 border-b-2 pb-6 font-inter font-semibold'  >More Like This</h3>
 
-    return(
+  <div className='grid gap-4 grid-cols-2 lg:grid-cols-7 my-8'>
 
-      <p>{detail.release_date}</p>
-    )
-  })
-} */}
+    {
+      details.map((more, i)=>{
+
+        return(
+
+          <div className='card_img  relative'>
+
+            <img className=' rounded-2xl ' src={`https://image.tmdb.org/t/p/original/${more?.poster_path || more?.backdrop_path}`} alt="" />
+
+            <div className='absolute  content left-0 p-2    h-2/5 bottom-0'>
+
+           <p className='text-white lg:text-base text-xs font-inter'>{(more?.original_title  || 'Title').slice(0, 20)}</p>
+           <p className=' text-gray-200 text-text-vs font-inter'>{(more.overview).slice(0, 25)}...</p>
+           <Link to={`/video/${more.id}`}>
+           <span className='w-full inline-block mt-2 rounded-lg text-sm font-semibold bg-slate-300 px-4 py-1 text-center'>Watch now</span>
+           </Link>
+          </div>
+
+
+
+            </div>
+
+
+
+        )
+      })
+    }
+
+
+
+
+  </div>
+  
+  
+
+
+
+</div>
+
 
 
 

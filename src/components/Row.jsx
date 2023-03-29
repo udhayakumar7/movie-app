@@ -87,21 +87,26 @@ return (
   :
          //  <Link to={`/video/${data.id}`}></Link>
          <>
-          <Link to={`/video/${data.id}`}>
+          
           <div className=' w-11/12 h-full card_img  relative' >
              
              <img className='h-full w-full  rounded-md lg:rounded-lg'  src={`https://image.tmdb.org/t/p/original/${data.poster_path}`} alt="poster" />
           
           <div className='absolute  content left-0 p-2    h-2/5 bottom-0'>
 
-           <p className='text-white text-xs font-inter'>{(data?.original_title  || 'Title').slice(0, 20)}</p>
+           <p className='text-white lg:text-base text-xs font-inter'>{(data?.original_title  || 'Title').slice(0, 20)}</p>
+          <Link to={`/video/${data.id}`}></Link>
            <p className=' text-gray-200 text-text-vs font-inter'>{(data.overview).slice(0, 25)}...</p>
+          <Link to={`/video/${data.id}`}></Link>
 
+           <Link to={`/video/${data.id}`}>
+           <span className='w-full hidden lg:inline-block mt-2 rounded-lg text-sm font-semibold bg-slate-300 px-4 py-1 text-center'>Watch now</span>
+           </Link>
           </div>
           {/* <Link className='text-white text-xl abs cursor-pointer relative z-50'  >Gooo</Link> */}
        </div>
 
-          </Link>
+       
          </>
               
 

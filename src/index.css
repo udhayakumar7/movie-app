@@ -51,7 +51,7 @@ body{
 
 .card_img:hover{
 
-  /* transform: scale(1.1); */
+  transform: scale(0.9) !important;
 }
 
 .login_bg{
@@ -83,3 +83,11 @@ animation: scroll 2s infinite alternate ;
   width: 100%;
   left: 0;
 } */
+
+.profile{
+  display: none;
+}
+
+.profileshow:hover +.profile{
+  display: block;
+}

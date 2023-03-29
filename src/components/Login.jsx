@@ -47,6 +47,7 @@ return (
             <h1 className='text-white pt-2 font-inter font-bold text-xl'>Login</h1>
             */}
             <img className=' w-20 rounded-xl mt-5 ml-3' src="https://akm-img-a-in.tosshub.com/businesstoday/images/story/202003/disneyhotstar_660_110320034428.jpg" alt="" />
+            <h2 className='text-white font-inter text-lg'>Login</h2>
             <div className='py-4 w-full px-8'>
                <form onSubmit={register}>
                   <div className=''>
