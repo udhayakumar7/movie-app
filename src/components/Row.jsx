@@ -29,10 +29,18 @@ arrows: false,
 // autoplay: true,
 autoplaySpeed: 5000,
 responsive: [
+   {
+      breakpoint: 1064,
+      settings: {
+      slidesToShow: 5,
+      slidesToScroll: 3,
+      infinite: true,
+      }
+      },
 {
-breakpoint: 1024,
+breakpoint: 900,
 settings: {
-slidesToShow: 6,
+slidesToShow: 5,
 slidesToScroll: 3,
 infinite: true,
 }
@@ -96,7 +104,7 @@ return (
 
            <p className='text-white lg:text-base text-xs font-inter'>{(data?.original_title  || 'Title').slice(0, 20)}</p>
           <Link to={`/video/${data.id}`}></Link>
-           <p className=' text-gray-200 text-text-vs font-inter'>{(data.overview).slice(0, 25)}...</p>
+           <p className=' respo_title text-gray-200 text-text-vs font-inter '>{(data.overview).slice(0, 25)}...</p>
           <Link to={`/video/${data.id}`}></Link>
 
            <Link to={`/video/${data.id}`}>

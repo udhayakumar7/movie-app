@@ -4,6 +4,10 @@ import { selectUser } from '../features/userSlice'
 import { useSelector } from 'react-redux'
 import { signOut } from 'firebase/auth'
 import { auth } from '../firebase'
+import { Link } from 'react-router-dom'
+import Searchbar from './Searchbar'
+
+
 
 
 const Navbar = () => {
@@ -50,7 +54,11 @@ const logout = () =>{
 
                 
                 <div className='flex items-center'>
+                  <Link to='/'>
                 <img className=' w-full ml-3' src="https://secure-media.hotstarext.com/web-assets/prod/images/brand-logos/disney-hotstar-logo-dark.svg" alt="" />
+
+                  </Link>
+
                 <div className='lg:flex hidden flex-row'>
                 <h2 className=' mt-2 px-6 text-white font-semibold font-inter'>TV</h2>
                  <h2 className=' mt-2 px-6 text-white font-semibold font-inter'>Movie</h2>
@@ -63,18 +71,21 @@ const logout = () =>{
 
            
             </div>
-            <div onClick={profile}>
+            <div className='flex  flex-row items-center' >
+
+              <Searchbar />
               
-                <img  className='rounded-full w-8' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStdv38zMp2McuOThlTfB2jnNuHaeBfI4mZE-daEksaMwcbC25YEtlq02U-pFW9KoMWA1I&usqp=CAU" alt="" />
+                <img onClick={profile}  className='rounded-full w-8' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStdv38zMp2McuOThlTfB2jnNuHaeBfI4mZE-daEksaMwcbC25YEtlq02U-pFW9KoMWA1I&usqp=CAU" alt="" />
 <div className={menu ? 'box_profile    text-text-vs lg:text-xs text-white h-auto  px-6 right-6 fixed top-10 bg-slate-700': 'hidden ' }>
 <p className='py-3 font-semibold'>{user.email}</p>
-<p className='py-3 font-semibold text-white cursor-pointer' onClick={logout}>Signout</p>
+<p className='py-3 font-semibold text-white cursor-pointer' >Signout</p>
 
 
 
 
 
 </div>
+<button className='px-3 py-1 font-semibold font-inter hidden lg:inline text-white bg-blue-700 ml-3 rounded-lg' onClick={logout}>Logout</button>
 
             </div>
           

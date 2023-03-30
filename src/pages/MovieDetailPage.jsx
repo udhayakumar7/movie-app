@@ -30,6 +30,7 @@ const [details, setDetails]= useState([])
 
     }
 
+    window.scrollTo(0, 0)
 
     
     getDetail()
