@@ -13,21 +13,28 @@ useEffect(() => {
 const fetchData = async () => {
 const request = await axios.get(fetchUrl);
 setMovies(request.data.results);
+// console.log(request.data.results.length())
+
 setLoading(false)
 console.log(loading, 'lllllll')
 console.log(request.data.results)
+
 return request;
 };
 fetchData();
 }, [fetchUrl]);
+
+var length = movies.length
+console.log(length)
+var randomSpeed = 1000 * (length + 1); 
 var moviesRow = {
 dots: false,
 infinite: true,
 slidesToShow: 8,
 slidesToScroll: 3,
 arrows: false,
-// autoplay: true,
-autoplaySpeed: 5000,
+autoplay: true,
+autoplaySpeed: randomSpeed,
 responsive: [
    {
       breakpoint: 1064,
@@ -82,7 +89,7 @@ return (
    <div className=' relative w-full h-full'>
       
 
-      <Slider className='w-full '  {...moviesRow}>
+      <Slider className='w-full '  {...moviesRow} >
          {
          movies.map(( data, i)=>{
          return(
@@ -90,9 +97,8 @@ return (
          <div key={i}>
             {
                loading ? 
-               <RowLoader />
-
-  :
+               
+               <RowLoader /> :
          //  <Link to={`/video/${data.id}`}></Link>
          <>
           
@@ -100,7 +106,7 @@ return (
              
              <img className='h-full w-full  rounded-md lg:rounded-lg'  src={`https://image.tmdb.org/t/p/original/${data.poster_path}`} alt="poster" />
           
-          <div className='absolute  content left-0 p-2    h-2/5 bottom-0'>
+          <div className='absolute  content left-0 p-2    h-2/5 bottom-0 text-clamp'>
 
            <p className='text-white lg:text-base text-xs font-inter'>{(data?.original_title  || 'Title').slice(0, 20)}</p>
           <Link to={`/video/${data.id}`}></Link>

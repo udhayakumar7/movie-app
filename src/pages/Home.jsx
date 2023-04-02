@@ -34,6 +34,8 @@ const Home = () => {
         fetchUrl={request.fetchComdeyMovies} />
         <Row title="Romance"
         fetchUrl={request.fetchRomanceMovies} />
+         <Row title="Tamil"
+        fetchUrl={request.fetchMore} />
         
         {/* fetchRomanceMovies
         fetchMysteryMovies
